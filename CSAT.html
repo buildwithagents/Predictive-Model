@@ -1,13 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CSAT Score – Customer 360</title>
-
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css"/>
-
 <style>
 
 *{
@@ -26,15 +16,17 @@ padding:20px;
 min-height:100vh;
 }
 
-/* Main card */
+/* Main Card */
 
 .card{
 width:100%;
 max-width:420px;
 background:#ffffff;
-border:1px solid #e6e6e6;
-border-radius:16px;
 padding:22px;
+border:none;              /* removed border */
+outline:none;
+box-shadow:none;          /* removed shadow */
+border-radius:0;          /* optional */
 }
 
 /* Header */
@@ -76,11 +68,11 @@ padding:5px 12px;
 font-size:12px;
 font-weight:500;
 border-radius:8px;
-background:#eaf3de;
-color:#3b6d11;
+background:#EAF3DE;
+color:#3B6D11;
 }
 
-/* Description */
+/* Text */
 
 .subtext{
 font-size:14px;
@@ -92,23 +84,23 @@ margin-bottom:18px;
 /* Button */
 
 .cta-btn{
-padding:11px 22px;
+padding:11px 24px;
 border-radius:999px;
 border:none;
 background:#111;
-color:white;
+color:#fff;
 font-size:14px;
 cursor:pointer;
 transition:.3s;
-margin-bottom:22px;
+margin-bottom:20px;
 }
 
 .cta-btn:hover{
-opacity:.85;
+opacity:.9;
 }
 
 .cta-btn.triggered{
-background:#eaf3de;
+background:#EAF3DE;
 color:#3B6D11;
 }
 
@@ -116,8 +108,9 @@ color:#3B6D11;
 
 .divider{
 border:none;
-border-top:1px solid #efefef;
-margin:18px 0;
+height:1px;
+background:#f2f2f2;   /* very subtle line */
+margin:20px 0;
 }
 
 /* Section */
@@ -138,13 +131,12 @@ color:#3B6D11;
 }
 
 .neg-icon{
-color:#C23D3D;
+color:#D84040;
 }
 
 .section-header span{
 font-size:14px;
 font-weight:600;
-color:#111;
 }
 
 /* List */
@@ -153,7 +145,7 @@ color:#111;
 list-style:none;
 display:flex;
 flex-direction:column;
-gap:10px;
+gap:12px;
 }
 
 .factor-list li{
@@ -175,156 +167,13 @@ color:#3B6D11;
 }
 
 .bullet-neg{
-color:#888;
+color:#999;
 }
 
 .highlight{
-font-weight:600;
 color:#D85A30;
+font-weight:600;
 margin-left:4px;
 }
 
 </style>
-</head>
-
-<body>
-
-<div class="card">
-
-<div class="header">
-
-<div class="ring-wrap">
-
-<svg width="72" height="72" viewBox="0 0 72 72">
-
-<!-- background -->
-
-<circle
-cx="36"
-cy="36"
-r="30"
-fill="none"
-stroke="#eeeeee"
-stroke-width="6"/>
-
-<!-- progress -->
-
-<circle
-cx="36"
-cy="36"
-r="30"
-fill="none"
-stroke="#3B6D11"
-stroke-width="6"
-stroke-linecap="round"
-stroke-dasharray="188.4"
-stroke-dashoffset="34"
-transform="rotate(-90 36 36)"
-/>
-
-</svg>
-
-<div class="ring-label">82</div>
-
-</div>
-
-<div class="header-text">
-
-<h2>CSAT Score</h2>
-
-<span class="badge">
-Satisfactory
-</span>
-
-</div>
-
-</div>
-
-<p class="subtext">
-Customer satisfaction is above threshold. Review feedback and proactively engage to retain loyalty.
-</p>
-
-<button
-class="cta-btn"
-onclick="this.classList.add('triggered'); this.innerText='Engagement Triggered ✓';">
-
-Engagement Steps
-
-</button>
-
-<hr class="divider">
-
-<!-- Positive -->
-
-<div class="section-header">
-
-<i class="ti ti-thumb-up pos-icon"></i>
-
-<span>Positive Factors</span>
-
-</div>
-
-<ul class="factor-list">
-
-<li>
-<span class="bullet bullet-pos">▪</span>
-Gold loan disbursed within SLA — no complaints raised
-</li>
-
-<li>
-<span class="bullet bullet-pos">▪</span>
-Last interaction rated 4.5 / 5 on branch visit
-</li>
-
-</ul>
-
-<hr class="divider">
-
-<!-- Negative -->
-
-<div class="section-header">
-
-<i class="ti ti-thumb-down neg-icon"></i>
-
-<span>Negative Factors</span>
-
-</div>
-
-<ul class="factor-list">
-
-<li>
-<span class="bullet bullet-neg">▪</span>
-Pending Renewal Calls :
-<span class="highlight">3</span>
-</li>
-
-<li>
-<span class="bullet bullet-neg">▪</span>
-Open Grievance Tickets :
-<span class="highlight">2</span>
-</li>
-
-<li>
-<span class="bullet bullet-neg">▪</span>
-Competing NBFC Enquiry :
-<span class="highlight">Yes</span>
-</li>
-
-<li>
-<span class="bullet bullet-neg">▪</span>
-Interest Payment Delay :
-<span class="highlight">Government</span>
-</li>
-
-<li>
-<span class="bullet bullet-neg">▪</span>
-Digital Channel Adoption :
-<span class="highlight">Low</span>
-</li>
-
-</ul>
-
-</div>
-
-</body>
-</html>
