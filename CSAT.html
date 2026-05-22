@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <title>CSAT Widget</title>
 
 <link rel="stylesheet"
@@ -16,18 +16,20 @@ padding:0;
 box-sizing:border-box;
 }
 
-body{
+html,body{
+width:100%;
+height:auto;
+overflow:visible;
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 background:transparent;
-overflow:hidden;
 }
 
 /* Main Card */
 
 .card{
 width:100%;
-padding:18px;
-padding:18px 20px;
+max-width:550px;
+padding:16px;
 background:#fff;
 }
 
@@ -37,19 +39,19 @@ background:#fff;
 display:flex;
 align-items:center;
 gap:14px;
-margin-bottom:14px;
+margin-bottom:16px;
 }
 
 .ring-wrap{
 position:relative;
-width:64px;
-height:64px;
+width:62px;
+height:62px;
 flex-shrink:0;
 }
 
 .ring-wrap svg{
-width:64px;
-height:64px;
+width:62px;
+height:62px;
 }
 
 .ring-label{
@@ -57,24 +59,24 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-font-size:14px;
+font-size:13px;
 font-weight:600;
 color:#111;
 }
 
 .header-text h2{
-font-size:13px;
+font-size:14px;
 font-weight:600;
-margin-bottom:6px;
+margin-bottom:5px;
 color:#111;
 }
 
 .badge{
 display:inline-block;
-padding:4px 10px;
+padding:5px 10px;
 font-size:10px;
+border-radius:7px;
 font-weight:500;
-border-radius:6px;
 background:#EAF3DE;
 color:#3B6D11;
 }
@@ -83,9 +85,9 @@ color:#3B6D11;
 
 .subtext{
 font-size:11px;
-line-height:1.6;
+line-height:1.7;
 color:#666;
-margin-bottom:14px;
+margin-bottom:15px;
 }
 
 /* Button */
@@ -99,12 +101,12 @@ color:white;
 font-size:12px;
 font-weight:500;
 cursor:pointer;
-margin-bottom:16px;
+margin-bottom:15px;
 transition:.3s;
 }
 
 .cta-btn:hover{
-opacity:.85;
+opacity:.9;
 }
 
 .cta-btn.triggered{
@@ -116,12 +118,12 @@ color:#3B6D11;
 
 .divider{
 height:1px;
-background:#efefef;
 border:none;
-margin:16px 0;
+background:#f1f1f1;
+margin:14px 0;
 }
 
-/* Section Header */
+/* Section */
 
 .section-header{
 display:flex;
@@ -142,10 +144,8 @@ color:#3B6D11;
 
 .neg-icon{
 font-size:16px;
-color:#D64B4B;
+color:#d94c4c;
 }
-
-/* Lists */
 
 .factor-list{
 list-style:none;
@@ -164,18 +164,18 @@ color:#555;
 }
 
 .bullet-pos{
-color:#3B6D11;
 font-size:12px;
+color:#3B6D11;
 }
 
 .bullet-neg{
-color:#999;
 font-size:12px;
+color:#999;
 }
 
 .highlight{
-color:#D85A30;
 font-weight:600;
+color:#D85A30;
 margin-left:3px;
 }
 
@@ -191,31 +191,31 @@ margin-left:3px;
 
 <div class="ring-wrap">
 
-<svg viewBox="0 0 64 64">
+<svg viewBox="0 0 62 62">
 
-<!-- Background Ring -->
+<!-- background -->
 
 <circle
-cx="32"
-cy="32"
-r="26"
+cx="31"
+cy="31"
+r="25"
 fill="none"
 stroke="#eeeeee"
 stroke-width="5"/>
 
-<!-- Progress Ring -->
+<!-- progress -->
 
 <circle
-cx="32"
-cy="32"
-r="26"
+cx="31"
+cy="31"
+r="25"
 fill="none"
 stroke="#3B6D11"
 stroke-width="5"
 stroke-linecap="round"
-stroke-dasharray="163"
-stroke-dashoffset="29"
-transform="rotate(-90 32 32)"
+stroke-dasharray="157"
+stroke-dashoffset="28"
+transform="rotate(-90 31 31)"
 />
 
 </svg>
@@ -242,8 +242,9 @@ Satisfactory
 Customer satisfaction is above threshold. Review feedback and proactively engage to retain loyalty.
 </p>
 
-<button class="cta-btn"
-onclick="this.innerHTML='Triggered ✓'; this.classList.add('triggered')">
+<button
+class="cta-btn"
+onclick="this.innerHTML='Triggered ✓';this.classList.add('triggered')">
 
 Engagement Steps
 
@@ -252,8 +253,11 @@ Engagement Steps
 <hr class="divider">
 
 <div class="section-header">
+
 <i class="ti ti-thumb-up pos-icon"></i>
+
 <span>Positive Factors</span>
+
 </div>
 
 <ul class="factor-list">
@@ -273,8 +277,11 @@ Last interaction rated 4.5 / 5 on branch visit
 <hr class="divider">
 
 <div class="section-header">
+
 <i class="ti ti-thumb-down neg-icon"></i>
+
 <span>Negative Factors</span>
+
 </div>
 
 <ul class="factor-list">
