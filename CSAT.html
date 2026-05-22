@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CSAT Card</title>
+<title>CSAT Widget</title>
 
 <link rel="stylesheet"
 href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
@@ -19,16 +19,16 @@ box-sizing:border-box;
 body{
 font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
 background:transparent;
-padding:0;
+overflow:hidden;
 }
 
-/* Main container */
+/* Main Card */
 
 .card{
 width:100%;
-max-width:460px;
-background:white;
-padding:28px;
+max-width:550px;
+padding:18px 20px;
+background:#fff;
 }
 
 /* Header */
@@ -36,20 +36,20 @@ padding:28px;
 .header{
 display:flex;
 align-items:center;
-gap:18px;
-margin-bottom:20px;
+gap:14px;
+margin-bottom:14px;
 }
 
 .ring-wrap{
 position:relative;
-width:80px;
-height:80px;
+width:64px;
+height:64px;
 flex-shrink:0;
 }
 
 .ring-wrap svg{
-width:80px;
-height:80px;
+width:64px;
+height:64px;
 }
 
 .ring-label{
@@ -57,50 +57,49 @@ position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
-font-size:18px;
+font-size:14px;
 font-weight:600;
 color:#111;
 }
 
 .header-text h2{
-font-size:18px;
+font-size:13px;
 font-weight:600;
-margin-bottom:8px;
+margin-bottom:6px;
 color:#111;
 }
 
 .badge{
 display:inline-block;
-padding:6px 14px;
-border-radius:8px;
-font-size:13px;
+padding:4px 10px;
+font-size:10px;
 font-weight:500;
-background:#eaf3de;
+border-radius:6px;
+background:#EAF3DE;
 color:#3B6D11;
 }
 
 /* Description */
 
 .subtext{
-font-size:14px;
-line-height:1.7;
+font-size:11px;
+line-height:1.6;
 color:#666;
-margin-bottom:20px;
+margin-bottom:14px;
 }
 
 /* Button */
 
 .cta-btn{
-
-padding:14px 30px;
+padding:10px 22px;
 border:none;
 border-radius:999px;
 background:black;
 color:white;
-font-size:15px;
+font-size:12px;
 font-weight:500;
 cursor:pointer;
-margin-bottom:25px;
+margin-bottom:16px;
 transition:.3s;
 }
 
@@ -109,7 +108,7 @@ opacity:.85;
 }
 
 .cta-btn.triggered{
-background:#eaf3de;
+background:#EAF3DE;
 color:#3B6D11;
 }
 
@@ -119,64 +118,69 @@ color:#3B6D11;
 height:1px;
 background:#efefef;
 border:none;
-margin:22px 0;
+margin:16px 0;
 }
 
-/* Sections */
+/* Section Header */
 
 .section-header{
 display:flex;
 align-items:center;
-gap:10px;
-margin-bottom:15px;
+gap:8px;
+margin-bottom:10px;
 }
 
 .section-header span{
-font-size:15px;
+font-size:12px;
 font-weight:600;
 }
 
 .pos-icon{
+font-size:16px;
 color:#3B6D11;
-font-size:20px;
 }
 
 .neg-icon{
-color:#d74d4d;
-font-size:20px;
+font-size:16px;
+color:#D64B4B;
 }
+
+/* Lists */
 
 .factor-list{
 list-style:none;
 display:flex;
 flex-direction:column;
-gap:12px;
+gap:8px;
 }
 
 .factor-list li{
 display:flex;
 align-items:flex-start;
-gap:10px;
-font-size:14px;
-line-height:1.6;
+gap:8px;
+font-size:11px;
+line-height:1.5;
 color:#555;
 }
 
 .bullet-pos{
 color:#3B6D11;
+font-size:12px;
 }
 
 .bullet-neg{
 color:#999;
+font-size:12px;
 }
 
 .highlight{
 color:#D85A30;
 font-weight:600;
-margin-left:4px;
+margin-left:3px;
 }
 
 </style>
+
 </head>
 
 <body>
@@ -187,27 +191,31 @@ margin-left:4px;
 
 <div class="ring-wrap">
 
-<svg viewBox="0 0 80 80">
+<svg viewBox="0 0 64 64">
+
+<!-- Background Ring -->
 
 <circle
-cx="40"
-cy="40"
-r="32"
+cx="32"
+cy="32"
+r="26"
 fill="none"
-stroke="#efefef"
-stroke-width="6"/>
+stroke="#eeeeee"
+stroke-width="5"/>
+
+<!-- Progress Ring -->
 
 <circle
-cx="40"
-cy="40"
-r="32"
+cx="32"
+cy="32"
+r="26"
 fill="none"
 stroke="#3B6D11"
-stroke-width="6"
+stroke-width="5"
 stroke-linecap="round"
-stroke-dasharray="201"
-stroke-dashoffset="36"
-transform="rotate(-90 40 40)"
+stroke-dasharray="163"
+stroke-dashoffset="29"
+transform="rotate(-90 32 32)"
 />
 
 </svg>
@@ -235,7 +243,7 @@ Customer satisfaction is above threshold. Review feedback and proactively engage
 </p>
 
 <button class="cta-btn"
-onclick="this.innerHTML='Engagement Triggered ✓'; this.classList.add('triggered')">
+onclick="this.innerHTML='Triggered ✓'; this.classList.add('triggered')">
 
 Engagement Steps
 
@@ -244,11 +252,8 @@ Engagement Steps
 <hr class="divider">
 
 <div class="section-header">
-
 <i class="ti ti-thumb-up pos-icon"></i>
-
 <span>Positive Factors</span>
-
 </div>
 
 <ul class="factor-list">
@@ -268,11 +273,8 @@ Last interaction rated 4.5 / 5 on branch visit
 <hr class="divider">
 
 <div class="section-header">
-
 <i class="ti ti-thumb-down neg-icon"></i>
-
 <span>Negative Factors</span>
-
 </div>
 
 <ul class="factor-list">
